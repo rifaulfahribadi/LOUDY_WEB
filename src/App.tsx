@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom'; // Hapus BrowserRouter dari sini
+import { Routes, Route } from 'react-router-dom'; // Hapus BrowserRouter
 import Home from './pages/Home';
 import Products from './pages/Products';
 
