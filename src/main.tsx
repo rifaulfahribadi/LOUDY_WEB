@@ -6,7 +6,7 @@ import './index.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter basename="/LOUDY_WEB"> {/* Pastikan basename benar */}
+    <BrowserRouter> {/* Pastikan basename benar */}
       <App />
     </BrowserRouter>
   </StrictMode>
