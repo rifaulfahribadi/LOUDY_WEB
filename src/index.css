@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background: #000;
+  }
+}
+
+@layer components {
+  .neon-glow {
+    box-shadow: 0 0 15px theme('colors.blue.700/30'),
+                0 0 30px theme('colors.blue.700/20');
+  }
+
+  .cyber-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.1));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .cyber-border {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .cyber-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid transparent;
+    background: linear-gradient(45deg, theme('colors.blue.500'), theme('colors.purple.500')) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-400 via-blue-500 to-purple-600 bg-clip-text text-transparent;
+  }
+
+  .bg-cyber {
+    background: linear-gradient(135deg, #000B1A 0%, #001F3D 100%);
+  }
+
+  .bg-cyber-light {
+    background: linear-gradient(135deg, rgba(0, 11, 26, 0.8) 0%, rgba(0, 31, 61, 0.8) 100%);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px theme('colors.blue.400/30'),
+                0 0 30px theme('colors.blue.400/20');
+  }
+  50% {
+    box-shadow: 0 0 20px theme('colors.blue.400/40'),
+                0 0 40px theme('colors.blue.400/30');
+  }
+}
